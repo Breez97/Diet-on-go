@@ -1,0 +1,95 @@
+/*
+
+	Theme Name: Main Theme
+	Template: kadence
+	Description: Main Theme for Project.
+	Version: 1.0
+	Author: breez
+
+*/
+
+/* Карточки на главной странице */
+
+.recipe-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    overflow-x: auto;
+}
+
+.recipe-card {
+    flex: 0 0 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+    min-width: 300px;
+    background-color: #655552;
+    border-radius: 10px;
+    padding: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    position: relative;
+}
+
+.recipe-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.recipe-title {
+    font-size: 20px;
+    font-family: 'Montserrat-Bold';
+    color: white;
+    margin-top: 15px;
+    margin: 10px 0;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.recipe-description {
+    font-size: 14px;
+    font-family: 'Montserrat-Regular';
+    color: white;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.recipe-meta {
+    font-size: 14px;
+    font-family: 'Montserrat-Medium';
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.recipe-category {
+    font-weight: 500;
+}
+
+.recipe-time {
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .recipe-cards-container {
+        flex-direction: column;
+    }
+    
+    .recipe-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* Стили для страницы рецепта */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Основной блок рецепта */
