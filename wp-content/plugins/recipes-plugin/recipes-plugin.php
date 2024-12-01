@@ -56,7 +56,6 @@ class RecipesPlugin {
 		wp_enqueue_media();
         wp_enqueue_script('jquery', plugin_dir_url( __FILE__ ) . 'js/jquery.js', array(), null, true);
         wp_enqueue_script('recipe-upload-script', plugin_dir_url( __FILE__ ) . 'js/recipe-upload.js', array('jquery'), null, true );
-        wp_enqueue_style('recipe-style', plugin_dir_url( __FILE__ ) . 'css/style.css');
     }
 
 	public function create_tables() {

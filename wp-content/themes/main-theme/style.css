@@ -1,25 +1,21 @@
 /*
-
-	Theme Name: Main Theme
-	Template: kadence
-	Description: Main Theme for Project.
-	Version: 1.0
-	Author: breez
-
+Theme Name: Main Theme
+Template: kadence
+Description: Main Theme for Project.
+Version: 1.0
+Author: Shamrov Ilya
 */
-
-/* Карточки на главной странице */
 
 .recipe-cards-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: space-between;
-    overflow-x: auto;
+    justify-content: flex-start;
+    margin: 0 auto;
 }
 
 .recipe-card {
-    flex: 0 0 calc(33.33% - 20px);
+    flex: 1 1 calc(33.33% - 20px);
     max-width: calc(33.33% - 20px);
     min-width: 300px;
     background-color: #655552;
@@ -30,9 +26,15 @@
     position: relative;
 }
 
+.recipe-card a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
 .recipe-image {
     width: 100%;
-    height: 200px;
+    height: 300px;
     object-fit: cover;
     border-radius: 12px;
 }
@@ -83,13 +85,68 @@
     }
 }
 
-
-/* Стили для страницы рецепта */
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.recipes-filter-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    width: 100%;
 }
 
-/* Основной блок рецепта */
+#recipe-search {
+    background-color: white;
+    color: #655552;
+    border: 2px solid #655552;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-family: 'Montserrat-Regular';
+    font-size: 16px;
+    width: 100%;
+    max-width: 600px;
+    outline: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23655552" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 40px;
+}
+
+#recipe-search::placeholder {
+    color: rgba(101, 85, 82, 0.7);
+}
+
+.filter-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+#recipe-category-day-filter,
+#recipe-category-filter,
+#recipe-cooking-time-filter {
+    background-color: white;
+    color: #655552;
+    border: 2px solid #655552;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-family: 'Montserrat-Regular';
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #recipe-category-day-filter,
+    #recipe-category-filter,
+    #recipe-cooking-time-filter {
+        margin-bottom: 10px;
+    }
+}
