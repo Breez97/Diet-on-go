@@ -37,14 +37,13 @@ Author: Shamrov Ilya
     height: 300px;
     object-fit: cover;
     border-radius: 12px;
+    margin-bottom: 10px;
 }
 
 .recipe-title {
     font-size: 20px;
     font-family: 'Montserrat-Bold';
     color: white;
-    margin-top: 15px;
-    margin: 10px 0;
     line-height: 1.3;
     text-align: center;
 }
@@ -55,6 +54,8 @@ Author: Shamrov Ilya
     color: white;
     margin: 0;
     line-height: 1.5;
+    font-weight: 400;
+    text-align: center;
 }
 
 .recipe-meta {
@@ -149,4 +150,169 @@ Author: Shamrov Ilya
     #recipe-cooking-time-filter {
         margin-bottom: 10px;
     }
+}
+
+.article-header {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1.article-title {
+    color: black;
+}
+
+.article-title {
+    font-size: 24px;
+    font-family: 'Montserrat-Bold';
+    color: #000000;
+    margin: 0;
+}
+
+.reading-time {
+    font-size: 16px;
+    font-family: 'Montserrat-Medium';
+    color: #656565;
+    margin-top: 5px;
+}
+
+.article-content {
+    font-size: 14px;
+    font-family: 'Montserrat-Regular';
+    color: #656565;
+    line-height: 1.6;
+    width: 80%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+.article-featured-image {
+    float: right;
+    margin: 10px;
+}
+
+.article-image-single {
+    border-radius: 10px;
+    width: 300px;
+    height: auto;
+}
+
+.entry-content p {
+    margin: 0 0 15px;
+}
+
+@media (max-width: 768px) {
+    .entry-header {
+        padding: 15px;
+        max-width: 100%;
+    }
+    .entry-title {
+        font-size: 22px;
+    }
+    .short-description,
+    .reading-time {
+        font-size: 14px;
+    }
+    .entry-content {
+        font-size: 15px;
+        width: 90%;
+    }
+    .article-featured-image {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    color: black;
+    margin: 20px auto; 
+}
+
+.article-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: #655552;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    transition: box-shadow 0.3s;
+}
+
+.article-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.article-image {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.article-details {
+    flex: 1;
+}
+
+.article-title {
+    font-size: 18px;
+    font-family: 'Montserrat-Bold';
+    color: white;
+    margin: 0 0 10px;
+}
+
+.article-description {
+    font-size: 14px;
+    font-family: 'Montserrat-Regular';
+    color: #ddd;
+    margin: 0 0 10px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.article-meta {
+    font-size: 14px;
+    font-family: 'Montserrat-Medium';
+    color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-time {
+    font-weight: 400;
+}
+
+.read-more {
+    background-color: #04C433;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.read-more:hover {
+    background-color: #008821;
+    color: white;
+}
+
+.read-more:active {
+    background-color: #008821;
+    color: white;
+}
+
+.read-more:focus {
+    background-color: #008821;
+    color: white;
 }

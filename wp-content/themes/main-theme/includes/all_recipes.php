@@ -35,10 +35,7 @@ function all_recipes_from_db() {
 	$output .= '<option value="0-15">До 15 минут</option>';
 	$output .= '<option value="15-30">15-30 минут</option>';
 	$output .= '<option value="30+">Более 30 минут</option>';
-	$output .= '</select>';
-	$output .= '</div>';
-	$output .= '</div>';
-    $output .= '</div>';
+	$output .= '</select></div></div></div>';
     $output .= '<div id="recipes-grid" class="recipe-cards-container">';
     if ($recipes) {
         foreach ($recipes as $recipe) {
@@ -123,8 +120,7 @@ function filter_recipes() {
             $response .= '<p class="recipe-category">' . esc_html($recipe->category_day) . '</p>';
             $response .= '<p class="recipe-type">Тип: ' . esc_html($recipe->category) . '</p>';
             $response .= '<p class="recipe-time">' . esc_html($recipe->cooking_time) . ' мин.</p>';
-            $response .= '</div>';
-            $response .= '</a></div>';
+            $response .= '</div></a></div>';
         }
     } else {
         $response = '<p>Нет рецептов, соответствующих фильтру.</p>';

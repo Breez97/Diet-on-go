@@ -96,7 +96,7 @@ function get_recipe_image($atts) {
     $table_name = $wpdb->prefix . 'recipes';
     $image_url = $wpdb->get_var($wpdb->prepare("SELECT image FROM $table_name WHERE id = %d", $recipe_id));
     if ($image_url) {
-        return '<img src="' . esc_url($image_url) . '" alt="Рецепт" style="border-radius: 12px; border: 2px solid #655552;" />';
+        return '<img src="' . esc_url($image_url) . '" alt="Рецепт" style="border-radius: 12px;" />';
     }
     return 'Изображение не найдено';
 }
