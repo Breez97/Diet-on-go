@@ -1,0 +1,386 @@
+/*
+Theme Name: Main Theme
+Template: kadence
+Description: Main Theme for Project
+Version: 1.0
+Author: Shamrov Ilya
+*/
+
+/* Карточки рецептов */
+
+.recipe-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    margin: 0 auto;
+}
+
+.recipe-card {
+    flex: 1 1 calc(33.33% - 20px);
+    max-width: calc(33.33% - 20px);
+    min-width: 300px;
+    background-color: #655552;
+    border-radius: 10px;
+    padding: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    position: relative;
+}
+
+.recipe-card a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+}
+
+.recipe-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.recipe-title {
+    font-size: 20px;
+    font-family: 'Montserrat-Bold';
+    color: white;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.recipe-description {
+    font-size: 14px;
+    font-family: 'Montserrat-Regular';
+    color: white;
+    margin: 0;
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: center;
+}
+
+.recipe-meta {
+    font-size: 14px;
+    font-family: 'Montserrat-Medium';
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.recipe-category {
+    font-weight: 500;
+}
+
+.recipe-time {
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .recipe-cards-container {
+        flex-direction: column;
+    }
+    
+    .recipe-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Фильтрация рецептов */
+
+.recipes-filter-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+#recipe-search {
+    background-color: white;
+    color: #655552;
+    border: 2px solid #655552;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-family: 'Montserrat-Regular';
+    font-size: 16px;
+    width: 100%;
+    max-width: 600px;
+    outline: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23655552" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 40px;
+}
+
+#recipe-search::placeholder {
+    color: rgba(101, 85, 82, 0.7);
+}
+
+.filter-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+#recipe-category-day-filter,
+#recipe-category-filter,
+#recipe-cooking-time-filter {
+    background-color: white;
+    color: #655552;
+    border: 2px solid #655552;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-family: 'Montserrat-Regular';
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #recipe-category-day-filter,
+    #recipe-category-filter,
+    #recipe-cooking-time-filter {
+        margin-bottom: 10px;
+    }
+}
+
+/* Генерация рецептов */
+
+.recipe-filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    margin: 0 auto;
+}
+
+.recipe-filter-row {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.recipe-filter-block {
+    flex: 1 1 32%;
+    padding: 20px;
+    max-width: 360px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.recipe-filter-block h3 {
+    font-size: 22px;
+    font-family: 'Montserrat-Bold';
+    color: black;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.recipe-filter label {
+    font-size: 16px;
+    font-family: 'Montserrat-Regular';
+    color: black;
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.recipe-filter select {
+    background-color: white;
+    color: #655552;
+    border: 2px solid #655552;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-family: 'Montserrat-Regular';
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.recipe-filter button {
+    background-color: #04C433;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.recipe-filter button:hover {
+    background-color: #008821;
+    color: white;
+}
+
+.recipe-filter button:active {
+    background-color: #008821;
+    color: white;
+}
+
+.recipe-filter button:focus {
+    background-color: #008821;
+    color: white;
+}
+
+.recipe-filter option {
+    font-family: 'Montserrat-Regular';
+    font-size: 16px;
+    color: #655552;
+}
+
+.generate-recipe {
+    background-color: #04C433;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Montserrat-Bold';
+    text-align: center;
+}
+
+.generate-recipe:hover {
+    background-color: #008821;
+}
+
+#breakfast-result, #lunch-result, #dinner-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-family: 'Montserrat-Regular';
+    color: #655552;
+    font-size: 16px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .recipe-filter-block {
+        flex: 1 1 100%;
+    }
+}
+
+.collection-title {
+    font-family: 'Montserrat-Bold';
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Статьи */
+
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    color: black;
+    margin: 20px auto; 
+}
+
+.article-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    background-color: #655552;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    transition: box-shadow 0.3s;
+}
+
+.article-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.article-image {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.article-details {
+    flex: 1;
+}
+
+.article-title {
+    font-size: 18px;
+    font-family: 'Montserrat-Bold';
+    color: white;
+    margin: 0 0 10px;
+}
+
+.article-description {
+    font-size: 14px;
+    font-family: 'Montserrat-Regular';
+    color: #ddd;
+    margin: 0 0 10px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.article-meta {
+    font-size: 14px;
+    font-family: 'Montserrat-Medium';
+    color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-time {
+    font-weight: 400;
+}
+
+.read-more {
+    background-color: #04C433;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.read-more:hover {
+    background-color: #008821;
+    color: white;
+}
+
+.read-more:active {
+    background-color: #008821;
+    color: white;
+}
+
+.read-more:focus {
+    background-color: #008821;
+    color: white;
+}
